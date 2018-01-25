@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationBar from './NavigationBar.js';
 import BackgroundAnimation from './BackgroundAnimation.js';
+import TheReciptProject from './TheReciptProject.js';
 const Dude = require('-!babel-loader!svg-react-loader!./../../img/dude.svg?name=Icon');
 export default class Home extends React.Component {
 
@@ -137,6 +138,7 @@ export default class Home extends React.Component {
                     </div>
                     <BackgroundAnimation className='backgroundAnimation'/>
                 </div>
+                <TheReciptProject className= "TheReciptProject"/>
             </div>
         )
     }
