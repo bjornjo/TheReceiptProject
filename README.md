@@ -1,8 +1,3 @@
-# TheReceiptProject
-Source code for the new Zeipt Landing page, contributed by Omar &amp; Awais
+# zeipt-node
 
-westerdals
-
-
-hei omar !!!!
-
+This is a React, Express and Webpack boilerplate for google cloud.

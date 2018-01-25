@@ -1,0 +1,87 @@
+/*
+REGULAR BUTTON
+*/
+button{
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  width: 300px;
+  height: 60px;
+  font-size: 14px;
+  margin-top: 10px;
+  border: none;
+  -webkit-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+  -moz-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+  -ms-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+  -o-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+  transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+  text-transform: uppercase;
+  :hover{
+    -webkit-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+    -ms-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+    -o-transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+    transition: background-color 0.6s ease-out, opacity 0.6s ease-out;
+  }
+}
+
+/*
+GREEN BUTTON
+*/
+.green-button {
+  color: white;
+  background-color: rgba(60, 191, 113, 0.8);
+  opacity: 1;
+  :hover{
+    background-color: rgba(60, 191, 113, 1);
+  }
+}
+
+/*
+WHITE BUTTON
+*/
+.white-button {
+  color: #21466C;
+  background-color: white;
+  opacity: 1;
+  :hover{
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0.9;
+  }
+}
+
+.right-arrow-btn{
+  background: url("../img/triangleRight.png") right 20px center no-repeat;
+  background-size: 10px;
+  color: white;
+  background-color: rgba(60, 191, 113, 0.8);
+}
+
+.right-arrow-btn:hover{
+  background-color: rgba(60, 191, 113, 1);
+}
+
+@mixin mobile-button() {
+  button{
+    width: 100%;
+    font-size: 14px;
+  }
+  .green-button:hover{
+    opacity: 1;
+    background-color: #3CBF71;
+  }
+}
+
+@mixin mobile-landscape-button() {
+  button{
+    float: none;
+    width: 300px;
+    height: 50px;
+    font-size: 14px;
+  }
+  .green-button:hover{
+    opacity: 1;
+    background-color: #3CBF71;
+  }
+}

@@ -1,0 +1,17 @@
+// MOBILE PORTRAIT
+@media (max-width: 700px) and (orientation: portrait){
+	@include mobile-main-container();
+	@include mobile-logo();
+	@include mobile-fonts();
+	@include mobile-button();
+	@include mobile-button();
+	@include mobile-input();
+}
+
+@media (max-width: 736px) and (orientation: landscape){
+  @include mobile-landscape-fonts();
+  @include mobile-landscape-logo();
+  @include mobile-landscape-button();
+  @include mobile-landscape-main-container();
+  @include mobile-landscape-input();
+}

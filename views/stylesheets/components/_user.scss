@@ -1,0 +1,156 @@
+input {
+    transition: 0.5s;
+    background: rgba(255, 255, 255, 0.5);
+    height: 60px;
+    text-indent: 10px;
+    font-size: 14px;
+    font-weight: 100;
+    color: black;
+    border: none;
+    padding: 0;
+    width: 20%;
+    margin-left: -100px;
+    opacity: 0;
+    position: relative;
+    z-index: 5;
+
+    &::placeholder {
+        color: #21466c;
+    }
+}
+
+select {
+    transition: 0.5s;
+    background: rgba(33, 70, 108, 0.7);
+    height: 46px;
+    text-indent: 10px;
+    font-size: 10pt;
+    font-weight: 100;
+    color: white;
+    border: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 0;
+    -webkit-appearance: initial;
+}
+
+.input-row {
+    width: 200px;
+    margin-left: 10px;
+    display: inline-table;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.input-row-hidden {
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+}
+
+.row-row {
+    height: 46px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.row-row p {
+    vertical-align: middle;
+    display: inline-block;
+    margin: auto;
+    height: 0;
+    color: #ffffff;
+}
+
+div#react-autowhatever-1 {
+    position: absolute;
+    width: 200px;
+    z-index: 100;
+}
+
+.suggestions {
+    padding: 5px;
+    color: #21466c;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.react-autosuggest__suggestion--highlighted {
+    background: rgba(33, 70, 108, 0.7);
+}
+
+.react-autosuggest__suggestion--highlighted .suggestions {
+    color: white;
+    background-color: transparent;
+}
+
+.terms-check {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    height: 46px;
+    text-indent: 10px;
+    font-weight: 100;
+    color: white;
+    border: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.checkbox {
+    width: 20px;
+    float: left;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    align-self: center;
+    transition: 0.5s;
+}
+
+.check-text {
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    display: table-cell;
+    text-indent: initial;
+    align-self: center;
+    width: 80%;
+    margin-left: 10px;
+}
+
+.appear {
+    opacity: 1;
+    transition: 0.5s;
+    display: block;
+    margin-left: 10px;
+    width: 100%;
+}
+
+@mixin mobile-input {
+    .input {
+        height: 0;
+    }
+
+    .appear {
+        margin-left: 0;
+        height: 60px;
+    }
+}
+
+@mixin mobile-landscape-input {
+    .input {
+        height: 0;
+        float: none;
+        display: block;
+    }
+
+    .appear {
+        margin-left: 0;
+        height: 50px;
+        float: none;
+    }
+}

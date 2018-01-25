@@ -1,0 +1,66 @@
+::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255,255,255,0.9);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(255,255,255,0.9);
+}
+
+:-ms-input-placeholder {
+  color: rgba(255,255,255,0.1);
+}
+
+h1{
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 46px;
+  color: white;
+  text-shadow: 0px 0px 10px #21466c;
+}
+
+h2{
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 30px;
+  color: white;
+}
+
+.disappear{
+  opacity: 0;
+}
+
+.front-text{
+  margin-bottom: 20px;
+  width: 80%;
+  font-size: 18px;
+  color: rgba(255,255,255,1);
+  font-weight: 400;
+  text-shadow: 0px 0px 10px #21466c;
+}
+
+@mixin mobile-fonts() {
+  .front-title{
+    font-size: 30px;
+    width: 100%;
+    transition: 0.5s;
+  }
+  .front-text{
+    width: 100%;
+  }
+}
+
+@mixin mobile-landscape-fonts() {
+  .front-title{
+    font-size: 20px;
+    width: 300px;
+    transition: 0.5s;
+  }
+  .front-text{
+    width: 100%;
+  }
+}
+
