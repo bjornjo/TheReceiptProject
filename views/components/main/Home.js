@@ -3,6 +3,7 @@ import NavigationBar from './NavigationBar.js';
 import BackgroundAnimation from './BackgroundAnimation.js';
 import TheReciptProject from './TheReciptProject.js';
 const Dude = require('-!babel-loader!svg-react-loader!./../../img/dude.svg?name=Icon');
+
 export default class Home extends React.Component {
 
     constructor(props) {
@@ -140,8 +141,6 @@ export default class Home extends React.Component {
                 </div>
                 <TheReciptProject className= "TheReciptProject"/>
             </div>
-            
-           
 
         )
     }
