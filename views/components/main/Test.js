@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react'; //importerer react
 
-export default class TheReciptProject extends React.Component {
+export default class Test extends React.Component {
     render(){
         return (
             <div>
-                "Hei 1"
+                "HALO"
             </div>
         )
     }
