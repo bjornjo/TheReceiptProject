@@ -2,7 +2,6 @@ import React from 'react';
 import NavigationBar from './NavigationBar.js';
 import BackgroundAnimation from './BackgroundAnimation.js';
 import TheReciptProject from './TheReciptProject.js';
-import Test from './Test.js';
 const Dude = require('-!babel-loader!svg-react-loader!./../../img/dude.svg?name=Icon');
 export default class Home extends React.Component {
 
@@ -136,12 +135,10 @@ export default class Home extends React.Component {
                                     onChange={this.onEmailChange}/>
                             </form>
                         </div>
-                        
                     </div>
                     <BackgroundAnimation className='backgroundAnimation'/>
                 </div>
                 <TheReciptProject className= "TheReciptProject"/>
-            
             </div>
             
            
