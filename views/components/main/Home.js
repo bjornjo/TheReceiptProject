@@ -136,12 +136,12 @@ export default class Home extends React.Component {
                                     onChange={this.onEmailChange}/>
                             </form>
                         </div>
-                        <Test className= "Test"/>
+                        
                     </div>
                     <BackgroundAnimation className='backgroundAnimation'/>
                 </div>
                 <TheReciptProject className= "TheReciptProject"/>
-                <Test className= "Test"/>
+            
             </div>
             
            
