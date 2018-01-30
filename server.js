@@ -25,7 +25,7 @@ app.get('*.js', function (req, res, next) {
 app.use(bodyParser.json());
 app.use('/', cors());
 
-app.use(favicon(path.join(__dirname, 'public', 'static', 'images', 'favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'public', 'static', 'images', 'favicon.ico')));
 
 app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
