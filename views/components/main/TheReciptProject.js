@@ -6,7 +6,7 @@ export default class TheReciptProject extends React.Component {
         return (
             <div>
              <Shiit className= "test"/>
-                "Hei 1"
+                
             </div>
         )
     }
