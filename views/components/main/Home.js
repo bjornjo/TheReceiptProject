@@ -139,7 +139,7 @@ export default class Home extends React.Component {
                     </div>
                     <BackgroundAnimation className='backgroundAnimation'/>
                 </div>
-                <TheReciptProject className="TheReciptProject"/>
+                <TheReciptProject className= "TheReciptProject"/>
             </div>
 
         )
