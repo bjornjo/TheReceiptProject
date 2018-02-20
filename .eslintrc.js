@@ -1,15 +1,21 @@
 module.exports = {
-    "env": {
-        "es6": true
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module"
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "quotes": [2, "single"],
+      "strict": [2, "never"],
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+      "react/react-in-jsx-scope": 2
     },
     "plugins": [
-        "react"
+      "react"
     ]
-};
+  }
