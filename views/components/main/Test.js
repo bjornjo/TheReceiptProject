@@ -11,51 +11,68 @@ import bsmart from "./../../img/bsmart.png"
 export default class Test extends React.Component {
     render() {
         return (
-            <div className="halo">
+            <div className="thereciptproject">
                 <p> THERECIPTPROJECT</p>
 
                 <div className="hoveddiv">
 
                     <div className="venstreDiv">
-                        <p> Take part of the journey of finding the best possible solution of
-            reducing socioeconomic and environmental problems associated with
-            paper recipts.</p>
+                        <p>
+                            Take part of the journey of finding the best possible solution of reducing socioeconomic and environmental problems associated with paper recipts.
+                        </p>
 
                         <p className="OngoingProjects"> On Going Projects </p>
                         <div className="bedrifter">
                             <div className="Fiken bedrift">
-                            <img src={fiken}/>
+                                <img src={fiken} />
                             </div>
                             <div className="Ebby bedrift">
-                            <img src={ebby}/>
+                                <img src={ebby} />
                             </div>
                             <div className="Payr bedrift">
-                            <img src={payr}/>
+                                <img src={payr} />
                             </div>
                             <div className="GlobalBlue bedrift">
-                            <img src={globalblue}/>
+                                <img src={globalblue} />
                             </div>
                             <div className="Aispot bedrift">
-                            <img src={aispot}/>
+                                <img src={aispot} />
                             </div>
                             <div className="24Sevenoffice bedrift">
-                            <img src={sevenoffice}/>
+                                <img src={sevenoffice} />
                             </div>
                             <div className="Visma bedrift">
-                            <img src={visma}/>
+                                <img src={visma} />
                             </div>
                             <div className="Bankbridge bedrift">
-                            <img src={bankbridge}/>
+                                <img src={bankbridge} />
                             </div>
                             <div className="bsmart bedrift">
-                            <img src={bsmart}/>
+                                <img src={bsmart} />
                             </div>
                         </div>
-                        
+
                     </div>
                     <div className="høyrediv">
-                            <p> Stay updated </p>
+                        <p> Benefits </p>
+                        <div className="benefits">
+                            <div className="benefitsbuttons">
+                                <div className="benefitsbutton active" id="sosiookonomisk">
+                                    <p> Socioeconomic </p>
+                                </div>
+                                <div className="benefitsbutton" id="envirement">
+                                    <p> Environment </p>
+                                </div>
+                                <div className="benefitsbutton" id="efficiency">
+                                    <p> Efficiency </p>
+                                </div>
+                            </div>
+                            <div className="benefitsbox" id="benefitsbox">
+
+
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
 

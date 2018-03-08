@@ -1,4 +1,4 @@
-.halo {
+.thereciptproject {
     padding: 40px;
     color: #0F2841;
     font-size: 46px;
@@ -23,26 +23,57 @@
     font-weight: 300;
     line-height: 30px;
     letter-spacing: normal;
-    width: 50%;
 }
 
 .høyrediv {
     p {
-        margin: 40px;
+        color: #0F2841;
+        margin-top: 30px;
+        font-size: 24px;
+        font-weight: 400;
     }
     color: #0F2841;
     font-size: 20px;
     font-weight: 300;
     line-height: 30px;
     letter-spacing: normal;
-    width: 50%;
+}
+
+.benefits {
+    height: 100%;
+    .active {
+        background-color: white;
+    }
+    .benefitsbutton {
+        position: relative;
+        width: 100%;
+        p {
+            margin: 0;
+            color: #0F2841;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: normal;
+            text-align: center;
+        }
+    }
+    .benefitsbox {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+    }
+    .benefitsbuttons{
+        display: flex;
+        justify-content: space-around;
+
+    }
 }
 
 .hoveddiv {
-    display: flex;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+    align-items: stretch;
 }
-
 
 .bedrift {
     height: 100px;
@@ -51,7 +82,7 @@
     margin-top: 10px;
     border-radius: 50px;
     position: relative;
-    img{
+    img {
         position: absolute;
         left: 0;
         right: 0;
@@ -61,28 +92,30 @@
         vertical-align: middle;
         max-width: 80px;
         margin: auto;
-    }  
-
+    }
 }
 
 .GlobalBlue {
-    img{width: 60px;}
+    img {
+        width: 60px;
     }
+}
+
 .bsmart {
-    img{width: 60px;}
+    img {
+        width: 60px;
+    }
 }
 
 .bedrifter {
     padding: 0;
     margin: 0;
     list-style: none;
-    
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
-  }
+}
