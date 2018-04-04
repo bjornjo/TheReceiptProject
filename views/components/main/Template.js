@@ -1,11 +1,9 @@
-import React, {PropTypes} from 'react'; //importerer react
+import React from 'react';
 
 export default class Template extends React.Component {
-    render(){
+    render() {
         return (
-            <div>
-                
-            </div>
-        )
+            <div></div>
+        );
     }
 }

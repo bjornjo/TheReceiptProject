@@ -1,44 +1,40 @@
-import React from "react";
-import ReactDOM from 'react-dom';
+import React from 'react';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
 
 export default class BackgroundAnimation extends React.Component {
-
     constructor(props, context) {
-
         super(props, context);
 
         // CAMERA
         var cameraPosition = this.cameraPosition = new THREE.Vector3(0, 0, 1000);
         var windowWidth = this.windowWidth = window.innerWidth;
         var windowHeight = this.windowHeight = window.innerHeight;
-        var aspectRatio = this.aspectRatio = this.windowWidth/this.windowHeight;
+        var aspectRatio = this.aspectRatio = this.windowWidth / this.windowHeight;
         var fieldOfView = this.fieldOfView = 60;
         this.nearPlane = 1;
         this.farPlane = 2000;
 
         // STUFF
-        var ang = this.ang = (fieldOfView/2)* Math.PI / 180;
+        var ang = this.ang = (fieldOfView / 2) * Math.PI / 180;
         var maxReceiptsZ = this.maxReceiptsZ = 600;
         var yLimit = this.yLimit = (cameraPosition.z + maxReceiptsZ) * Math.tan(ang);
         this.xLimit = yLimit * aspectRatio;
 
         // SPEED
-        var speed = this.speed = {x:0, y:0};
-        var smoothing = this.smoothing = 10;
-        var mousePos = this.mousePos = {x:0, y:0};
+        var speed = this.speed = {x: 0, y: 0};
+        var mousePos = this.mousePos = {x: 0, y: 0};
 
         // ZEIPT IN MOBILE
         var triangle1points = this.triangle1points = {y1: 0, y2: 58, y3: 58};
         var triangle2points = this.triangle2points = {y1: -13, y2: 58, y3: 58, y4: -13};
         var triangle3points = this.triangle3points = {y1: -13, y2: -13, y3: 48};
 
-        //CENTER
+        // CENTER
         var windowMiddleX = this.windowMiddleX = windowWidth / 2;
         var windowMiddleY = windowHeight / 2;
 
-        //LIGHT
+        // LIGHT
         this.lightPosition = new THREE.Vector3(20, 20, 20);
         this.lightTarget = new THREE.Vector3(0, 0, 0);
 
@@ -68,51 +64,50 @@ export default class BackgroundAnimation extends React.Component {
             zeiptRotation: zeiptRotation
         };
 
-        //MOUSEMOVE
+        // MOUSEMOVE
         window.addEventListener('mousemove', handleMouseMove, true);
-        
 
-        function handleMouseMove(event){
+
+        function handleMouseMove(event) {
             mousePos.x = event.clientX;
             mousePos.y = event.clientY;
-            speed.x = (windowMiddleX - mousePos.x)/10;
-            speed.y = (windowMiddleY-mousePos.y) /50 ;
+            speed.x = (windowMiddleX - mousePos.x) / 10;
+            speed.y = (windowMiddleY - mousePos.y) / 50;
 
-            triangle1points.y1 = (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth))/20000;
-            triangle1points.y2 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth))/20000;
-            triangle1points.y3 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth))/20000;
+            triangle1points.y1 = (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth)) / 20000;
+            triangle1points.y2 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth)) / 20000;
+            triangle1points.y3 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth)) / 20000;
 
-            triangle2points.y1 = -13 + (Math.pow(mousePos.x, 2) -(mousePos.x * windowWidth))/20000;
-            triangle2points.y2 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth))/20000;
-            triangle2points.y3 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth))/20000;
-            triangle2points.y4 = -13 + (Math.pow(mousePos.x, 2) -(mousePos.x * windowWidth))/20000;
+            triangle2points.y1 = -13 + (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth)) / 20000;
+            triangle2points.y2 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth)) / 20000;
+            triangle2points.y3 = 58 + (-Math.pow(mousePos.x, 2) + (mousePos.x * windowWidth)) / 20000;
+            triangle2points.y4 = -13 + (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth)) / 20000;
 
-            triangle3points.y1 = -13 + (Math.pow(mousePos.x, 2) -(mousePos.x * windowWidth))/20000;
-            triangle3points.y2 = -13 + (Math.pow(mousePos.x, 2) -(mousePos.x * windowWidth))/20000;
-            triangle3points.y3 = 48 - (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth))/20000;
+            triangle3points.y1 = -13 + (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth)) / 20000;
+            triangle3points.y2 = -13 + (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth)) / 20000;
+            triangle3points.y3 = 48 - (Math.pow(mousePos.x, 2) - (mousePos.x * windowWidth)) / 20000;
         }
 
         this._updateDimensions = this._updateDimensions.bind(this);
     }
 
-    _updateDimensions(){
+    _updateDimensions() {
         var w = window,
             d = document,
             documentElement = d.documentElement,
             body = d.getElementsByTagName('body')[0],
             windowWidth = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-            windowHeight = w.innerHeight|| documentElement.clientHeight|| body.clientHeight;
+            windowHeight = w.innerHeight || documentElement.clientHeight || body.clientHeight;
 
         this.setState({
             windowWidth: windowWidth,
             windowHeight: windowHeight
         });
-        
+
         console.log('state: ' + this.state.windowWidth);
     }
 
-
-    componentDidMount(){
+    componentDidMount() {
         window.addEventListener('resize', this._updateDimensions, true);
         var receiptsArray = this.receiptsArray;
         var waitingReceiptsArray = this.waitingReceiptsArray;
@@ -120,38 +115,36 @@ export default class BackgroundAnimation extends React.Component {
         var yLimit = this.yLimit;
         var xLimit = this.xLimit;
 
-        function myLoop () {
-            setTimeout(function () {
-                var geometry = new THREE.BoxGeometry( );
-                var material = new THREE.MeshBasicMaterial( { } );
-                var receipt = new THREE.Mesh( geometry, material );
+        function myLoop() {
+            setTimeout(function() {
+                var geometry = new THREE.BoxGeometry();
+                var material = new THREE.MeshBasicMaterial({ });
+                var receipt = new THREE.Mesh(geometry, material);
 
                 receipt.position.x = xLimit;
-                receipt.position.y = -yLimit + Math.random()*yLimit*2;
-                receipt.position.z = Math.random()*maxReceiptsZ;
+                receipt.position.y = -yLimit + Math.random() * yLimit * 2;
+                receipt.position.z = Math.random() * maxReceiptsZ;
 
-                var s = .1 + Math.random();
-                receipt.scale.set(s,s,s);
+                var s = 0.1 + Math.random();
+                receipt.scale.set(s, s, s);
                 receiptsArray.push(receipt);
                 myLoop();
 
-                receiptsArray.forEach(function(receipt, index){
+                receiptsArray.forEach(function(receipt, index) {
                     if (receiptsArray.length > 50) {
                         receiptsArray.pop();
                     }
                     if (receipt.position.x < -xLimit - 80) {
-                        waitingReceiptsArray.push(receiptsArray.splice(index,1)[0]);
+                        waitingReceiptsArray.push(receiptsArray.splice(index, 1)[0]);
                     }
                     if (waitingReceiptsArray.length) {
                         waitingReceiptsArray.pop();
                     }
                 });
-
-            }, 100)
+            }, 100);
         }
 
         myLoop();
-
     }
 
     _onAnimate = () => {
@@ -162,18 +155,17 @@ export default class BackgroundAnimation extends React.Component {
         this.setState({
             zeiptPosition: new THREE.Vector3(
                 this.zeiptPosition.x += (((this.mousePos.x - this.windowMiddleX)) - this.zeiptPosition.x) / this.smoothing,
-                this.zeiptPosition.y += ((-this.speed.y*10)-this.zeiptPosition.y)/this.smoothing,
+                this.zeiptPosition.y += ((-this.speed.y * 10) - this.zeiptPosition.y) / this.smoothing,
                 0
             ),
 
             zeiptRotation: new THREE.Euler(
-                this.zeiptRotation.x += ((this.speed.x/1000)-this.zeiptRotation.x)/this.smoothing,
-                this.zeiptRotation.y += ((this.speed.y/1000)-this.zeiptRotation.y)/this.smoothing,
+                this.zeiptRotation.x += ((this.speed.x / 1000) - this.zeiptRotation.x) / this.smoothing,
+                this.zeiptRotation.y += ((this.speed.y / 1000) - this.zeiptRotation.y) / this.smoothing,
                 0
             )
         });
     }
-
 
     render() {
         const d = 0;
@@ -242,13 +234,13 @@ export default class BackgroundAnimation extends React.Component {
                 {this.state.receiptsArray.map((receipt, index) => {
                     return <mesh
                         rotation={new THREE.Euler(
-                            receipt.rotation.x += (1/receipt.scale.x) *0.005,
-                            receipt.rotation.y += (1/receipt.scale.x) *0.005,
-                            receipt.rotation.z += (1/receipt.scale.x) *0.005
+                            receipt.rotation.x += (1 / receipt.scale.x) * 0.005,
+                            receipt.rotation.y += (1 / receipt.scale.x) * 0.005,
+                            receipt.rotation.z += (1 / receipt.scale.x) * 0.005
                         )}
                         position={new THREE.Vector3(
-                            receipt.position.x += -5 -(1/receipt.scale.x) * this.speed.x *.05,
-                            receipt.position.y += (1/receipt.scale.x) * this.speed.y *.2,
+                            receipt.position.x += -5 - (1 / receipt.scale.x) * this.speed.x * 0.05,
+                            receipt.position.y += (1 / receipt.scale.x) * this.speed.y * 0.2,
                             receipt.position.z
                         )}
                         key={index}
@@ -269,7 +261,7 @@ export default class BackgroundAnimation extends React.Component {
                             />
                         </meshBasicMaterial>
 
-                    </mesh>
+                    </mesh>;
                 })}
 
             </scene>

@@ -1,13 +1,13 @@
-import React, {PropTypes} from 'react'; //importerer react
+import React from 'react';
 import Shiit from './Test.js';
 
 export default class TheReciptProject extends React.Component {
-    render(){
+    render() {
         return (
             <div>
-             <Shiit className= "test"/>
-                
+                <Shiit className= "test"/>
+
             </div>
-        )
+        );
     }
 }
