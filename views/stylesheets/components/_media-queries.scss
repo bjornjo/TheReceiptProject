@@ -1,6 +1,7 @@
 // MOBILE PORTRAIT
 @media (max-width: 700px) and (orientation: portrait){
 	@include mobile-main-container();
+	@include mobile-receipt-project();
 	@include mobile-logo();
 	@include mobile-fonts();
 	@include mobile-button();
@@ -12,6 +13,7 @@
   @include mobile-landscape-fonts();
   @include mobile-landscape-logo();
   @include mobile-landscape-button();
-  @include mobile-landscape-main-container();
+	@include mobile-landscape-main-container();
+	@include mobile-landscape-receipt-project();
   @include mobile-landscape-input();
 }

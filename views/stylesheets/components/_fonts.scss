@@ -21,7 +21,13 @@ h1{
   color: white;
   text-shadow: 0px 0px 10px #21466c;
 }
-
+.title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 46px;
+  color: #0F2841;
+  font-weight: bold;
+}
 h2{
   text-transform: uppercase;
   font-weight: 400;
@@ -44,9 +50,15 @@ h2{
 
 @mixin mobile-fonts() {
   .front-title{
-    font-size: 30px;
+    font-size: 25px;
     width: 100%;
     transition: 0.5s;
+  }
+  .title {
+    font-size: 25px;
+    width: 100%;
+    transition: 0.5s;
+    margin-bottom: 0;
   }
   .front-text{
     width: 100%;
@@ -55,6 +67,11 @@ h2{
 
 @mixin mobile-landscape-fonts() {
   .front-title{
+    font-size: 20px;
+    width: 300px;
+    transition: 0.5s;
+  }
+  .title {
     font-size: 20px;
     width: 300px;
     transition: 0.5s;

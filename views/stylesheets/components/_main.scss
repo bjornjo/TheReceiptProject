@@ -1,15 +1,14 @@
-*{
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
-  margin:0;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  list-style: none;
-  
-  :focus{
-    outline: none;
-  }
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    margin: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    :focus {
+        outline: none;
+    }
 }
 
 form {
@@ -17,10 +16,12 @@ form {
     width: 50%;
 }
 
-input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-  -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0 0 0 1000px #21466c inset;
-  transition: background-color 5000s ease-in-out 0s;
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0 1000px #21466c inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .bottom {
@@ -30,44 +31,43 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     right: 50px;
 }
 
-.main{
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  background: url("../img/bgimage.jpg") no-repeat center;
-  background-size: cover;
-  z-index: 1;
+.main {
+    position: fixed;
+    overflow: hidden;
+    height: 100vh;
+    background: url("../img/bgimage.jpg") no-repeat center;
+    background-size: cover;
+    z-index: 1;
 }
 
-.front{
-  z-index: 1;
-  position: absolute;
-  width: 100vw;
-  height:100vh;
+.front {
+    z-index: 1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 
-
-
-.fade{
-  position: absolute;
-  z-index: 0;
-  width: 100vw;
-  height: 150px;
-  bottom: 0;
+.fade {
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 150px;
+    bottom: 0;
 }
 
+ul {
+    padding: 0;
+}
 
-ul{
-  padding: 0;
+.hidden {
+    opacity: 0;
+    transition: .5s;
 }
-.hidden{
-  opacity: 0;
-  transition: .5s;
-}
-.visible{
-  display: block;
-  opacity: 1;
-  transition: .5s;
+
+.visible {
+    display: block;
+    opacity: 1;
+    transition: .5s;
 }
 
 .arrow {
@@ -81,7 +81,7 @@ ul{
     display: inline-block;
 }
 
-.alertbox-hidden{
+.alertbox-hidden {
     position: relative;
     opacity: 0;
     transition: .5s;
@@ -91,7 +91,7 @@ ul{
     width: 270px;
 }
 
-.alertbox-visible{
+.alertbox-visible {
     position: relative;
     opacity: 1;
     transition: .5s;
@@ -101,7 +101,7 @@ ul{
     width: 270px;
 }
 
-.alert{
+.alert {
     width: 190px;
     border-radius: 2px;
     position: relative;
@@ -114,7 +114,6 @@ ul{
     transition: .5s;
     display: inline-block;
 }
-
 
 .alert-danger {
     color: #FA4100;
@@ -129,95 +128,95 @@ ul{
 }
 
 @mixin mobile-main-container() {
-  .main-container{
-    width: 80%;
-    padding: 0 0 0 0;
-    left: 0;
-    right: 0;
-    bottom: 40px;
-    margin: auto;
-  }
-  .bottom {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-  }
-  form {
-    display: grid;
-    width: 100%;
-  }
-  .alert-success {
-    width: 100%;
-  }
-  .arrow {
-    height: 0px;
-    width: 0px;
-    border-left: 20px solid transparent;
-    border-right: 10px solid white;
-    border-bottom: 0px solid transparent;
-    border-top: 10px solid transparent;
-    margin-left: 0px;
-    display: block;
-  }
-  .dude {
-    display: inline-block;
-    margin-left: 20px;
-    margin-bottom: 0px;
-  }
-  .alertbox-hidden{
-    margin-bottom: -130px;
-    width: 100%;
-  }
-  .alertbox-visible{
-    width: 100%;
-    margin-bottom: 0px;
-  }
+    .main-container {
+        width: 80%;
+        padding: 0 0 0 0;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        margin: auto;
+    }
+    .bottom {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    form {
+        display: grid;
+        width: 100%;
+    }
+    .alert-success {
+        width: 100%;
+    }
+    .arrow {
+        height: 0px;
+        width: 0px;
+        border-left: 20px solid transparent;
+        border-right: 10px solid white;
+        border-bottom: 0px solid transparent;
+        border-top: 10px solid transparent;
+        margin-left: 0px;
+        display: block;
+    }
+    .dude {
+        display: inline-block;
+        margin-left: 20px;
+        margin-bottom: 0px;
+    }
+    .alertbox-hidden {
+        margin-bottom: -130px;
+        width: 100%;
+    }
+    .alertbox-visible {
+        width: 100%;
+        margin-bottom: 0px;
+    }
 }
 
-@mixin mobile-landscape-main-container(){
-  .main-container{
-    width: 80%;
-    padding: 0 0 0 0;
-    left: 0;
-    right: 0;
-    bottom: 40px;
-    margin: auto;
-  }
-  .bottom {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-  }
-  form {
-    display: grid;
-    width: 100%;
-  }
-  .alert-success {
-    width: 100%;
-  }
-  .arrow {
-    height: 0px;
-    width: 0px;
-    border-left: 20px solid transparent;
-    border-right: 10px solid white;
-    border-bottom: 0px solid transparent;
-    border-top: 10px solid transparent;
-    margin-left: 0px;
-    display: block;
-  }
-  .dude {
-    display: inline-block;
-    margin-left: 20px;
-    margin-bottom: 0px;
-  }
-  .alertbox-hidden{
-    margin-bottom: -130px;
-    width: 100%;
-  }
-  .alertbox-visible{
-    width: 100%;
-    margin-bottom: 0px;
-  }
+@mixin mobile-landscape-main-container() {
+    .main-container {
+        width: 80%;
+        padding: 0 0 0 0;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        margin: auto;
+    }
+    .bottom {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    form {
+        display: grid;
+        width: 100%;
+    }
+    .alert-success {
+        width: 100%;
+    }
+    .arrow {
+        height: 0px;
+        width: 0px;
+        border-left: 20px solid transparent;
+        border-right: 10px solid white;
+        border-bottom: 0px solid transparent;
+        border-top: 10px solid transparent;
+        margin-left: 0px;
+        display: block;
+    }
+    .dude {
+        display: inline-block;
+        margin-left: 20px;
+        margin-bottom: 0px;
+    }
+    .alertbox-hidden {
+        margin-bottom: -130px;
+        width: 100%;
+    }
+    .alertbox-visible {
+        width: 100%;
+        margin-bottom: 0px;
+    }
 }

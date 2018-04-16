@@ -1,5 +1,5 @@
-.thereciptproject {
-    padding: 40px;
+.thereceiptproject {
+    padding: 40px 0;
     color: #0F2841;
     font-size: 46px;
     text-align: center;
@@ -8,16 +8,22 @@
     height: 100vh;
     background: url("../img/thereciptproject.png") no-repeat center;
     background-size: cover;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 -20px 100px #0F2841;
 }
 
 .venstreDiv {
     .OngoingProjects {
         color: #0F2841;
         margin-top: 30px;
+        
         font-size: 24px;
         font-weight: 400;
     }
-    margin: 40px 0px;
+    >p {
+        font-size: 18px;
+    }
     color: #0F2841;
     font-size: 20px;
     font-weight: 300;
@@ -28,7 +34,6 @@
 .høyrediv {
     p {
         color: #0F2841;
-        margin-top: 30px;
         font-size: 24px;
         font-weight: 400;
     }
@@ -41,41 +46,46 @@
 
 .benefits {
     height: 100%;
-    .active {
-        background-color: white;
+    margin-top: 10px;
+    .react-tabs__tab--selected {
+        background-color: #0F2841;
+    }
+    .benefitsbutton.react-tabs__tab--selected {
+        cursor: auto;
+        color: white;
     }
     .benefitsbutton {
         position: relative;
         width: 100%;
-        p {
-            margin: 0;
-            color: #0F2841;
-            font-size: 20px;
-            font-weight: 300;
-            letter-spacing: normal;
-            text-align: center;
-        }
+        cursor: pointer;
+        font-size: 18px;
     }
     .benefitsbox {
-        background-color: white;
+        background-color: #0F2841;
         height: 100%;
         width: 100%;
     }
-    .benefitsbuttons{
+    .benefitsbuttons {
         display: flex;
         justify-content: space-around;
-
     }
 }
 
+.Modal-modal-0-1-3 {
+    padding: 50px;
+}
+
 .hoveddiv {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: stretch;
-    align-items: stretch;
+    display: flex;
+    margin-top: 20px;
+    >div {
+        padding: 0 20px;
+        width: 50%;
+    }
 }
 
 .bedrift {
+    cursor: pointer;
     height: 100px;
     width: 100px;
     background-color: white;
@@ -118,4 +128,49 @@
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
+}
+
+@mixin mobile-receipt-project() {
+    .thereceiptproject {
+        box-shadow: 0 0px 100px #0F2841;
+        padding: 5px 10px;
+    }
+    .bedrifter {
+        display: block;
+        overflow-x: scroll;
+        width: auto;
+        white-space: nowrap;
+        .bedrift{
+            margin-right: 10px;
+        }
+        > div {
+            display: inline-block;
+        }
+    }
+    .hoveddiv {
+        display: block;
+        margin: 0;
+        margin-top: 10px;
+        >div {
+            width: 100%;
+            padding: 0;
+        }
+        .venstreDiv>p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .høyrediv > p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .benefitsbutton{
+            font-size: 12px;
+        }
+    }
+}
+
+@mixin mobile-landscape-receipt-project() {
+    .thereceiptproject {
+        padding: 5px 10px;
+    }
 }
