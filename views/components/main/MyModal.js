@@ -29,9 +29,7 @@ export default class MyModal extends React.Component {
         
         return (
             <div>
-                <div onClick={this.onOpenModal} className="bedrift">
-                    <img src={this.props.company}/>
-                </div>
+                <div onClick={this.onOpenModal} className="interested-btn">Interested?</div>
                 <Modal open={open} onClose={this.onCloseModal} little>
                     <p>{this.props.children}</p>
                 </Modal>

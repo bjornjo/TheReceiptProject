@@ -45,15 +45,16 @@ export default class TheReceiptProject extends React.Component {
                             Ongoing Projects
                         </p>
                         <div className="bedrifter">
-                            <MyModal company={fiken}>Fiken</MyModal>
-                            <MyModal company={ebby}>Ebbt</MyModal>
-                            <MyModal company={payr}>Payr</MyModal>
-                            <MyModal company={globalblue}>Global Blue</MyModal>
-                            <MyModal company={aispot}>AI Spot</MyModal>
-                            <MyModal company={sevenoffice}>24SevenOffice</MyModal>
-                            <MyModal company={visma}>Visma</MyModal>
-                            <MyModal company={bankbridge}>Bankbridge</MyModal>
-                            <MyModal company={bsmart}>BSmart</MyModal>
+                            <a href="https://fiken.no" target="_blank" className="bedrift"><img src={fiken}/></a>
+                            <a href="https://www.ebby.no" target="_blank" className="bedrift"><img src={ebby}/></a>
+                            <a href="https://payr.no" target="_blank" className="bedrift"><img src={payr}/></a>
+                            <a href="http://www.globalblue.com" target="_blank" className="bedrift"><img src={globalblue}/></a>
+                            <a href="https://aispot.no" target="_blank" className="bedrift"><img src={aispot}/></a>
+                            <a href="https://24sevenoffice.com/no/" target="_blank" className="bedrift"><img src={sevenoffice}/></a>
+                            <a href="https://www.visma.no" target="_blank" className="bedrift"><img src={visma}/></a>
+                            <a href="https://www.bankbridge.io" target="_blank" className="bedrift"><img src={bankbridge}/></a>
+
+                            
                         </div>
 
                     </div>
@@ -83,6 +84,9 @@ export default class TheReceiptProject extends React.Component {
                         </Tabs>
                     </div>
                 </div>
+                <div className="interested">
+                        <MyModal></MyModal>
+                    </div>
             </div>
 
         );
