@@ -26,12 +26,16 @@ export default class MyModal extends React.Component {
 
     render() {
         const {open} = this.state;
-        
+
         return (
             <div>
                 <div onClick={this.onOpenModal} className="interested-btn">Interested?</div>
                 <Modal open={open} onClose={this.onCloseModal} little>
-                    <p>{this.props.children}</p>
+                    <form>
+                        <input type="text" placeholder="Your email" className="modalinput"/>
+                        <textarea type="text" placeholder="Your message" className="message" rows="10" cols="30"></textarea>
+                        <div className="interested"> <div className="interested-btn">Send mail</div></div>
+                    </form>
                 </Modal>
             </div>
         );

@@ -72,7 +72,7 @@ export default class TheReceiptProject extends React.Component {
                             <div className="benefitsbox">
                                 <TabPanel>
                                     <Idea className='idea'/>
-                                    <h2>Any content 1</h2>
+                                    <p>Zeipt is solving socioeconomic problems by </p>
                                 </TabPanel>
                                 <TabPanel>
                                     <h2>Any content 2</h2>

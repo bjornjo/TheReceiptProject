@@ -141,8 +141,8 @@ export default class Home extends React.Component {
                         </div>
                         <BackgroundAnimation className='backgroundAnimation'/>
                     </div>
-                    </Slide>
-                    <Slide>
+                </Slide>
+                <Slide>
                     <TheReciptProject className="TheReceiptProject"/>
                 </Slide>
             </FullPage>
