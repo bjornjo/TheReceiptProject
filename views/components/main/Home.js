@@ -57,20 +57,30 @@ export default class Home extends React.Component {
     render() {
         const props = this.props.props;
         const actions = this.props.actions;
-        return (
-            <FullPage>
-                <Slide>
-                    <div className='main'>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            return (
 
-                        <div className="front">
-                            <NavigationBar/>
+                <div>
+                    <Slide className="firstpage">
+                        <div className='main'>
 
-                            <div className="bottom">
-                                {(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
-                                    ? <div
-                                            className={this.state.activatedForm || this.state.confirmedEmail
-                                            ? "hidden"
-                                            : "visible"}>
+                            <div className="front">
+                                <NavigationBar/>
+
+                                <div className="bottom">
+                                    {(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
+                                        ? <div
+                                                className={this.state.activatedForm || this.state.confirmedEmail
+                                                ? "hidden"
+                                                : "visible"}>
+                                                <h1 className="front-title">DO RECEIPTS BETTER</h1>
+                                                <p className="front-text">
+                                                    Zeipt is bridging the gap between physical and digital,
+                                                    <br/>
+                                                    by creating an open eco-system for digital receipt distribution.
+                                                </p>
+                                            </div>
+                                        : <div className="visible">
                                             <h1 className="front-title">DO RECEIPTS BETTER</h1>
                                             <p className="front-text">
                                                 Zeipt is bridging the gap between physical and digital,
@@ -78,18 +88,18 @@ export default class Home extends React.Component {
                                                 by creating an open eco-system for digital receipt distribution.
                                             </p>
                                         </div>
-                                    : <div className="visible">
-                                        <h1 className="front-title">DO RECEIPTS BETTER</h1>
-                                        <p className="front-text">
-                                            Zeipt is bridging the gap between physical and digital,
-                                            <br/>
-                                            by creating an open eco-system for digital receipt distribution.
-                                        </p>
-                                    </div>
 }
 
-                                {this.state.confirmedEmail
-                                    ? <div className="alertbox-visible">
+                                    {this.state.confirmedEmail
+                                        ? <div className="alertbox-visible">
+                                                <Dude className='dude'/>
+                                                <div className='arrow visible'></div>
+                                                <div className='alert alert-success'>
+                                                    Thanks {this.state.emailName}
+                                                    for subscribing!
+                                                </div>
+                                            </div>
+                                        : <div className="alertbox-hidden">
                                             <Dude className='dude'/>
                                             <div className='arrow visible'></div>
                                             <div className='alert alert-success'>
@@ -97,55 +107,160 @@ export default class Home extends React.Component {
                                                 for subscribing!
                                             </div>
                                         </div>
-                                    : <div className="alertbox-hidden">
-                                        <Dude className='dude'/>
-                                        <div className='arrow visible'></div>
-                                        <div className='alert alert-success'>
-                                            Thanks {this.state.emailName}
-                                            for subscribing!
-                                        </div>
-                                    </div>
 }
 
-                                {this.state.emailValidated
-                                    ? <button
-                                            className='button white-button'
-                                            onClick=
-                                            { (e) => { actions.onSignup( document.getElementById('emailinput').value ); this.onEmailConfirmed(), this.setState({ activatedForm: false, email: '', emailValidated: false, confirmedEmail: true }); e.preventDefault(); } }>
-                                            Confirm
+                                    {this.state.emailValidated
+                                        ? <button
+                                                className='button white-button'
+                                                onClick=
+                                                { (e) => { actions.onSignup( document.getElementById('emailinput').value ); this.onEmailConfirmed(), this.setState({ activatedForm: false, email: '', emailValidated: false, confirmedEmail: true }); e.preventDefault(); } }>
+                                                Confirm
+                                            </button>
+                                        : <button
+                                            onClick={() => {
+                                            this.state.activatedForm
+                                                ? this.setState({activatedForm: false})
+                                                : this.setState({activatedForm: true})
+                                        }}
+                                            className="right-arrow-btn">
+                                            Keep me updated
                                         </button>
-                                    : <button
-                                        onClick={() => {
-                                        this.state.activatedForm
-                                            ? this.setState({activatedForm: false})
-                                            : this.setState({activatedForm: true})
-                                    }}
-                                        className="right-arrow-btn">
-                                        Keep me updated
-                                    </button>
 }
 
-                                <form>
-                                    <input
-                                        id='emailinput'
-                                        type='text'
-                                        placeholder='Your email'
-                                        className={this.state.activatedForm
-                                        ? 'input appear'
-                                        : 'input'}
-                                        value={this.state.email}
-                                        required
-                                        onChange={this.onEmailChange}/>
-                                </form>
+                                    <form>
+
+                                        <input
+                                            id='emailinput'
+                                            type='text'
+                                            placeholder='Your email'
+                                            className={this.state.activatedForm
+                                            ? 'input appear'
+                                            : 'input'}
+                                            value={this.state.email}
+                                            required
+                                            onChange={this.onEmailChange}/>
+                                    </form>
+                                    <button
+                                        onClick={() => {
+                                        document
+                                            .getElementById("secondPage")
+                                            .style
+                                            .marginTop = '0vh'
+                                    }}
+                                        className='button white-button'>
+                                        TheReceiptProject
+                                    </button>
+                                </div>
+
                             </div>
+                            <BackgroundAnimation className='backgroundAnimation'/>
                         </div>
-                        <BackgroundAnimation className='backgroundAnimation'/>
-                    </div>
-                </Slide>
-                <Slide>
-                    <TheReciptProject className="TheReceiptProject"/>
-                </Slide>
-            </FullPage>
-        )
+                    </Slide>
+                    <Slide className="secondPage" id="secondPage">
+                        <TheReciptProject className="TheReceiptProject"/>
+                    </Slide>
+                </div>
+            )
+        } else {
+            return (
+
+                <FullPage controls controlsProps={{className: 'class-name'}}>
+                    <Slide>
+                        <div className='main'>
+
+                            <div className="front">
+                                <NavigationBar/>
+
+                                <div className="bottom">
+                                    {(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))
+                                        ? <div
+                                                className={this.state.activatedForm || this.state.confirmedEmail
+                                                ? "hidden"
+                                                : "visible"}>
+                                                <h1 className="front-title">DO RECEIPTS BETTER</h1>
+                                                <p className="front-text">
+                                                    Zeipt is bridging the gap between physical and digital,
+                                                    <br/>
+                                                    by creating an open eco-system for digital receipt distribution.
+                                                </p>
+                                            </div>
+                                        : <div className="visible">
+                                            <h1 className="front-title">DO RECEIPTS BETTER</h1>
+                                            <p className="front-text">
+                                                Zeipt is bridging the gap between physical and digital,
+                                                <br/>
+                                                by creating an open eco-system for digital receipt distribution.
+                                            </p>
+                                        </div>
+}
+
+                                    {this.state.confirmedEmail
+                                        ? <div className="alertbox-visible">
+                                                <Dude className='dude'/>
+                                                <div className='arrow visible'></div>
+                                                <div className='alert alert-success'>
+                                                    Thanks {this.state.emailName}
+                                                    for subscribing!
+                                                </div>
+                                            </div>
+                                        : <div className="alertbox-hidden">
+                                            <Dude className='dude'/>
+                                            <div className='arrow visible'></div>
+                                            <div className='alert alert-success'>
+                                                Thanks {this.state.emailName}
+                                                for subscribing!
+                                            </div>
+                                        </div>
+}
+
+                                    {this.state.emailValidated
+                                        ? <button
+                                                className='button white-button'
+                                                onClick=
+                                                { (e) => { actions.onSignup( document.getElementById('emailinput').value ); this.onEmailConfirmed(), this.setState({ activatedForm: false, email: '', emailValidated: false, confirmedEmail: true }); e.preventDefault(); } }>
+                                                Confirm
+                                            </button>
+                                        : <button
+                                            onClick={() => {
+                                            this.state.activatedForm
+                                                ? this.setState({activatedForm: false})
+                                                : this.setState({activatedForm: true})
+                                        }}
+                                            className="right-arrow-btn">
+                                            Keep me updated
+                                        </button>
+}
+
+                                    <form>
+                                        <input
+                                            id='emailinput'
+                                            type='text'
+                                            placeholder='Your email'
+                                            className={this.state.activatedForm
+                                            ? 'input appear'
+                                            : 'input'}
+                                            value={this.state.email}
+                                            required
+                                            onChange={this.onEmailChange}/>
+                                    </form>
+                                    <button
+                                        onClick={() => {
+                                        
+                                    }}
+                                        className='button white-button'>
+                                        TheReceiptProject
+                                    </button>
+                                </div>
+                            </div>
+                            <BackgroundAnimation className='backgroundAnimation'/>
+                        </div>
+                    </Slide>
+                    <Slide>
+                        <TheReciptProject className="TheReceiptProject"/>
+                    </Slide>
+                </FullPage>
+            )
+        }
+
     }
 }

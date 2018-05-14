@@ -11,7 +11,9 @@ import sevenoffice from './../../img/sevenoffice.png';
 import visma from './../../img/visma.png';
 import bankbridge from './../../img/bankbridge.png';
 import bsmart from './../../img/bsmart.png';
-const Idea = require('-!babel-loader!svg-react-loader!./../../img/idea.svg?name=Icon');
+const Plant = require('-!babel-loader!svg-react-loader!./../../img/plant.svg?name=Icon');
+const Efficiency = require('-!babel-loader!svg-react-loader!./../../img/efficiency.svg?name=Icon');
+const Money = require('-!babel-loader!svg-react-loader!./../../img/money.svg?name=Icon');
 
 export default class TheReceiptProject extends React.Component {
     constructor(props) {
@@ -37,7 +39,7 @@ export default class TheReceiptProject extends React.Component {
 
                     <div className="venstreDiv">
                         <p>
-                            Take part of the journey of finding the best possible solution of reducing
+                            Take part in the journey of finding the best possible solution of reducing
                             socioeconomic and environmental problems associated with paper recipts.
                         </p>
 
@@ -71,14 +73,16 @@ export default class TheReceiptProject extends React.Component {
                             </TabList>
                             <div className="benefitsbox">
                                 <TabPanel>
-                                    <Idea className='idea'/>
-                                    <p>Zeipt is solving socioeconomic problems by </p>
+                                    <Money className='idea'/>
+                                    <p>Zeipt is solving socioeconomic challenges by creating seamless distribution of financial data from the users shopping habits to user-interfaces giving financial advices.</p>
                                 </TabPanel>
                                 <TabPanel>
-                                    <h2>Any content 2</h2>
+                                    <Plant className='idea'/>
+                                    <p>Estimnated 600 000 trees, 60 000 000 liters of oil and 305 000 000 liters of water was used for creating all receipts in Scandinavia in 2014. Zeipt wishes to eliminate this resource usage.</p>
                                 </TabPanel>
                                 <TabPanel>
-                                    <h2>Any content 3</h2>
+                                    <Efficiency className='idea'/>
+                                    <p>Handling paper receipts are often known to be very inefficient. Zeipt automates the process of handling the data on the receipts for systems such as accounting and other financial services.</p>
                                 </TabPanel>
                             </div>
                         </Tabs>
